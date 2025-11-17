@@ -99,6 +99,7 @@
         }
         
         h3 {
+            text-transform: uppercase;
             font-size: 1.5rem;
             line-height: 2rem;
             font-weight: 700;
@@ -117,26 +118,34 @@
             text-decoration-thickness: 0.25rem;
             text-underline-offset: 0.6rem;
         }
-        /* === Header section sets === */
+        /* === HEADER AND FOOTER SECTIONS SETS === */
         
-        .header-section {
+        .header-section,
+        .footer-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 3rem 0 8rem;
         }
         
-        .header-links {
+        .footer-section {
+            margin-bottom: 4rem;
+        }
+        
+        .header-links,
+        .footer-section {
             display: flex;
             align-items: center;
             gap: 2.5rem;
         }
         
-        .header-links a {
+        .header-links a,
+        .footer-section a {
             text-decoration: none;
         }
         
-        .header-links img {
+        .header-links img,
+        .footer-section img {
             width: 1.5rem;
             height: 1.5rem;
         }
@@ -150,28 +159,69 @@
             max-width: 50%;
             margin-top: 0;
         }
-        /* == hr line == */
+        /* == hr line sets == */
         
         .hr-line {
             width: 100%;
             border: none;
             height: 1px;
             background-color: var(--clr-white);
-            margin: 5rem 0;
+            margin: 3rem 0;
         }
-        /*  == Contact me section sets ==*/
+        /* == Experience section sets == */
+        
+        .experience-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            row-gap: 3rem;
+        }
+        
+        .experience-block h2 {
+            margin-bottom: 0.875rem;
+        }
+        /* === PROJECTS SECTION SETS  === */
+        /* == Projects header */
+        
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5rem 0 5rem;
+        }
+        /* == Projects section sets == */
+        
+        .projects-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 3rem;
+        }
+        /*  == CONTACT FORM SECTION SETS ==*/
+        
+        .contact-form-section {
+            background-color: var(--clr-darkgrey);
+        }
         
         .contact-me {
+            color: var(--clr-white);
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.14rem;
+            text-transform: uppercase;
+            line-height: 1.625rem;
             margin: 5rem 0;
             text-decoration-line: underline;
             text-decoration-color: var(--clr-accent);
             text-decoration-thickness: 0.15rem;
-            text-underline-offset: 1rem;
+            text-underline-offset: 0.8rem;
         }
         
         .contact-me:hover {
-            color: var(--clr-accent)
+            color: var(--clr-accent);
+            cursor: pointer;
         }
+        /* === FOOTER SECTION SETS === */
+        /* Footer section sets — see the "HEADER AND FOOTER SECTIONS SETS" section above */
         /* === @MEDIA SETS ===  */
         /* == Hover effect only for devices with a mouse == */
         
@@ -203,35 +253,121 @@
 
     <!-- === Main section === -->
     <main>
+        <!-- == Main header section == -->
         <section class="main-header-section">
             <h1>Nice to meet you!<br> I'm <span class="accent-text">Andrew Martinenko</span></h1>
             <article class="main-header-section-text">
                 <p>Based in the Moldova, I'm a front-end developer passionate about building accessible web apps that users love. </p>
             </article>
 
-            <h3 class="contact-me">Contact me</h3>
+            <p class="contact-me">Contact me</p>
 
             <hr class="hr-line">
         </section>
-        <section class="experience-section">
-            HTML 4 Years Experience CSS 4 Years Experience JavaScript 4 Years Experience Accessibility 4 Years Experience React 3 Years Experience Sass 3 Years Experience
-        </section>
-        <section>
-            <h1>Projects</h1>
-            <h3>Contact me</h3>
-        </section>
-        Design portfolio HTML CSS View project View code E-learning landing page HTML CSS View project View code Todo web app HTML CSS JavaScript View project View code Entertainment web app HTML CSS JavaScript View project View code Memory Game HTML CSS JavaScript
-        View project View code Art gallery showcase HTML CSS JavaScript View project View code
 
+        <!-- == Experience section == -->
+        <section class="experience-section">
+            <article class="experience-block">
+                <h2>HTML</h2>
+                <p>2 Years Experience</p>
+            </article>
+            <article class="experience-block">
+                <h2>CSS</h2>
+                <p>2 Years Experience</p>
+            </article>
+            <article class="experience-block">
+                <h2>JavaScript</h2>
+                <p>2 Years Experience</p>
+            </article>
+            <article class="experience-block">
+                <h2>Accessibility</h2>
+                <p>1 Year Experience</p>
+            </article>
+            <article class="experience-block">
+                <h2>React</h2>
+                <p>1 Year Experience</p>
+            </article>
+            <article class="experience-block">
+                <h2>Sass</h2>
+                <p>1 Year Experience</p>
+            </article>
+        </section>
+
+        <!-- == Projects section  -->
+        <section>
+            <!-- === Projects header section -->
+            <article class="projects-header">
+                <h1>Projects</h1>
+                <p class="contact-me">Contact me</p>
+            </article>
+            <!-- Projects blocks section -->
+            <section class="projects-section">
+
+                <article class="projects-block">
+                    <h3>Design portfolio</h3>
+                    <p>HTML CSS</p>
+                    <!-- View project View code -->
+                </article>
+
+                <article class="projects-block">
+                    <h3>E-learning landing page</h3>
+                    <p>HTML CSS</p>
+
+
+                    <!-- View project View code -->
+                </article>
+                <article class="projects-block">
+                    <h3>Todo web app</h3>
+                    <p>HTML CSS JavaScript</p>
+                    <!-- View project View code -->
+                </article>
+                <article class="projects-block">
+                    <h3>Entertainment web app</h3>
+                    <p>HTML CSS JavaScript</p>
+                    <!-- View project View code -->
+                </article>
+                <article class="projects-block">
+                    <h3>Memory Game</h3>
+                    <p>HTML CSS JavaScript</p>
+                    <!-- View project View code -->
+                </article>
+
+                <article class="projects-block">
+                    <h3>Art gallery showcase</h3>
+                    <p>HTML CSS JavaScript</p>
+                    <!-- View project View code -->
+                </article>
+            </section>
+        </section>
+
+
+
+        <!-- === Contact form section === -->
+        <section class="contact-form-section">
+            <h1>Contact</h1>
+            <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+            Name Email Message
+            <p class="contact-me">Send message </p>
+        </section>
+        <hr class="hr-line">
     </main>
 
+
+
     <!-- === Footer section === -->
-
-    <footer>
-        Contact
-        <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
-
-        Name Email Message Send message andrewMartinenko
+    <footer class="footer-section">
+        <h3>andrewMartinenko</h3>
+        <div class="header-links">
+            <a href="https://github.com/AxinitM" target="_blank">
+                <img src="./assets/images/icon-github.svg" alt="github icon">
+            </a>
+            <a href="https://www.frontender.biz/" target="_blank">
+                <img src="./assets/images/favicon.png" alt="my favicon icon">
+            </a>
+            <a href="https://www.linkedin.com/in/andrei-martinenko/" target="_blank">
+                <img src="./assets/images/icon-linkedin.svg" alt="linkedin icon">
+            </a>
+        </div>
     </footer>
 </body>
 

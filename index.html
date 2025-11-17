@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#faf9fd" />
 
     <!-- === Page info === -->
-    <title>Excursions Platform — Codecademy Project</title>
+    <title>Single-page developer portfolio</title>
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
     <meta name="author" content="..." />
@@ -21,7 +21,9 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon-32x32.png" />
 
     <!-- === Google Fonts === -->
-    <!-- Not using any custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <!-- === CSS Reset / Styles === -->
     <link rel="stylesheet" href="./styles/reset.css" />
@@ -29,7 +31,10 @@
 
     <!-- === Open Graph (Facebook, LinkedIn, etc.) === -->
     <meta property="og:title" content="Single-page developer portfolio" />
-    <meta property="og:description" content="Discover hidden places and get personalized travel recommendations worldwide." />
+
+    <!-- !!!!!!!!!!!!!!!!!!!! NEED TO FILL !!!!!!!!!!!!!!!
+    <meta property="og:description" content="..." /> -->
+
     <meta property="og:image" content="https://www.yoursite.com/assets/og-image.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.yoursite.com/" />
@@ -45,40 +50,121 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <style>
-        /* == Root and General sets ==*/
+        /* === Roots sets === */
         
          :root {
             /* == Colors == */
-            --clr-bg: #000;
-            --clr-text-main: #fff;
-            --clr-text: #808080;
-            --clr-text-link: #7fffd4;
-            --clr-black: #000;
+            --clr-bg: #151515;
+            --clr-black: #151515;
+            --clr-accent: #4EE1A0;
+            --clr-darkgrey: #242424;
+            --clr-gray: #d9d9d9;
+            --clr-white: #FFFFFF;
             /* == Fonts == */
-            --font-main: Verdana, sans-serif;
+            --font-main: "Space Grotesk", Arial, sans-serif;
         }
+        /* === General sets === */
         
         body {
             display: flex;
             justify-content: center;
+            flex-direction: column;
             min-height: 100vh;
+            width: 80%;
+            margin: 3rem auto;
             font-size: 16px;
             font-family: var(--font-main);
             background-color: var(--clr-bg);
-            color: var(--clr-text-main);
+            color: var(--clr-white);
+        }
+        /* === Headers and text sets === */
+        
+        h1 {
+            font-size: 5.5rem;
+            letter-spacing: -2.5px;
+            line-height: 5.5rem;
+            font-weight: 700;
         }
         
-        section {
+        h2 {
+            font-size: 3rem;
+            letter-spacing: -1.5px;
+            line-height: 3.5rem;
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            font-weight: 400;
+            color: var(--clr-gray);
+        }
+        /* === Header section sets === */
+        
+        .header-section {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            flex-direction: column;
+        }
+        
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-links img {
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 
 <body>
-    <!-- adamkeyes Nice to meet you! I'm Adam Keyes. Based in the UK, I'm a front-end developer passionate about building accessible web apps that users love. Contact me HTML 4 Years Experience CSS 4 Years Experience JavaScript 4 Years Experience Accessibility 4 Years Experience React 3 Years Experience Sass 3 Years Experience Projects Contact me Design portfolio HTML CSS View project View code E-learning landing page HTML CSS View project View code Todo web app HTML CSS JavaScript View project View code Entertainment web app HTML CSS JavaScript View project View code Memory Game HTML CSS JavaScript View project View code Art gallery showcase HTML CSS JavaScript View project View code Contact I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible. Name Email Message Send message adamkeyes -->
+    <!-- === Header section ===  -->
+    <header class="header-section">
+        <h3>adamkeyes</h3>
+
+        <div class="header-links">
+            <a href="https://github.com/AxinitM" target="_blank">
+                <img src="./assets/images/icon-github.svg" alt="github icon">
+            </a>
+            <a href="https://www.frontender.biz/" target="_blank">
+                <img src="./assets/images/favicon.png" alt="my favicon icon">
+            </a>
+            <a href="https://www.linkedin.com/in/andrei-martinenko/" target="_blank">
+                <img src="./assets/images/icon-linkedin.svg" alt="linkedin icon">
+            </a>
+        </div>
+    </header>
+
+
+
+    <main>
+        <h1>Nice to meet you! I'm Adam Keyes.</h1>
+        <p>Based in the UK, I'm a front-end developer passionate about building accessible web apps that users love. </p>
+        <h3 class="contact-me">Contact me
+            <h3>
+                HTML 4 Years Experience CSS 4 Years Experience JavaScript 4 Years Experience Accessibility 4 Years Experience React 3 Years Experience Sass 3 Years Experience
+                <section>
+                    <h1>Projects</h1>
+                    <h3>Contact me</h3>
+                </section>
+                Design portfolio HTML CSS View project View code E-learning landing page HTML CSS View project View code Todo web app HTML CSS JavaScript View project View code Entertainment web app HTML CSS JavaScript View project View code Memory Game HTML CSS JavaScript
+                View project View code Art gallery showcase HTML CSS JavaScript View project View code
+
+                <footer>
+                    Contact
+                    <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+
+                    Name Email Message Send message adamkeyes
+                </footer>
 </body>
 
 </html>

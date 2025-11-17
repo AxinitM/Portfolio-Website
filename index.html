@@ -26,13 +26,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <!-- === CSS Reset / Styles === -->
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
+
+    <!-- <link rel="stylesheet" href="./styles/style.css" /> -->
 
     <!-- === Open Graph (Facebook, LinkedIn, etc.) === -->
     <meta property="og:title" content="Single-page developer portfolio" />
 
-    <!-- !!!!!!!!!!!!!!!!!!!! NEED TO FILL !!!!!!!!!!!!!!!
+    <!-- !!!!!!!!!!!!!!!!!!!! NEED TO FILL IN !!!!!!!!!!!!!!!
     <meta property="og:description" content="..." /> -->
 
     <meta property="og:image" content="https://www.yoursite.com/assets/og-image.jpg" />
@@ -65,10 +65,13 @@
         }
         /* === General sets === */
         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
             min-height: 100vh;
             width: 80%;
             margin: 3rem auto;
@@ -84,6 +87,8 @@
             letter-spacing: -2.5px;
             line-height: 5.5rem;
             font-weight: 700;
+            text-align: left;
+            margin: 2rem 0;
         }
         
         h2 {
@@ -105,31 +110,83 @@
             font-weight: 400;
             color: var(--clr-gray);
         }
+        
+        .accent-text {
+            text-decoration-line: underline;
+            text-decoration-color: var(--clr-accent);
+            text-decoration-thickness: 0.25rem;
+            text-underline-offset: 0.6rem;
+        }
         /* === Header section sets === */
         
         .header-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin: 3rem 0 8rem;
         }
         
         .header-links {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 2.5rem;
+        }
+        
+        .header-links a {
+            text-decoration: none;
         }
         
         .header-links img {
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        /* === Main section sets === */
+        
+        .main-header-section {
+            margin: 5rem 0;
+        }
+        
+        .main-header-section-text {
+            max-width: 50%;
+            margin-top: 0;
+        }
+        /* == hr line == */
+        
+        .hr-line {
+            width: 100%;
+            border: none;
+            height: 1px;
+            background-color: var(--clr-white);
+            margin: 5rem 0;
+        }
+        /*  == Contact me section sets ==*/
+        
+        .contact-me {
+            margin: 5rem 0;
+            text-decoration-line: underline;
+            text-decoration-color: var(--clr-accent);
+            text-decoration-thickness: 0.15rem;
+            text-underline-offset: 1rem;
+        }
+        
+        .contact-me:hover {
+            color: var(--clr-accent)
+        }
+        /* === @MEDIA SETS ===  */
+        /* == Hover effect only for devices with a mouse == */
+        
+        @media (hover: hover) and (pointer: fine) {
+            footer a:hover {
+                color: var(--clr-text-link);
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- === Header section ===  -->
+    <!-- === Header and links section ===  -->
     <header class="header-section">
-        <h3>adamkeyes</h3>
+        <h3>andrewMartinenko</h3>
 
         <div class="header-links">
             <a href="https://github.com/AxinitM" target="_blank">
@@ -144,27 +201,38 @@
         </div>
     </header>
 
-
-
+    <!-- === Main section === -->
     <main>
-        <h1>Nice to meet you! I'm Adam Keyes.</h1>
-        <p>Based in the UK, I'm a front-end developer passionate about building accessible web apps that users love. </p>
-        <h3 class="contact-me">Contact me
-            <h3>
-                HTML 4 Years Experience CSS 4 Years Experience JavaScript 4 Years Experience Accessibility 4 Years Experience React 3 Years Experience Sass 3 Years Experience
-                <section>
-                    <h1>Projects</h1>
-                    <h3>Contact me</h3>
-                </section>
-                Design portfolio HTML CSS View project View code E-learning landing page HTML CSS View project View code Todo web app HTML CSS JavaScript View project View code Entertainment web app HTML CSS JavaScript View project View code Memory Game HTML CSS JavaScript
-                View project View code Art gallery showcase HTML CSS JavaScript View project View code
+        <section class="main-header-section">
+            <h1>Nice to meet you!<br> I'm <span class="accent-text">Andrew Martinenko</span></h1>
+            <article class="main-header-section-text">
+                <p>Based in the Moldova, I'm a front-end developer passionate about building accessible web apps that users love. </p>
+            </article>
 
-                <footer>
-                    Contact
-                    <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+            <h3 class="contact-me">Contact me</h3>
 
-                    Name Email Message Send message adamkeyes
-                </footer>
+            <hr class="hr-line">
+        </section>
+        <section class="experience-section">
+            HTML 4 Years Experience CSS 4 Years Experience JavaScript 4 Years Experience Accessibility 4 Years Experience React 3 Years Experience Sass 3 Years Experience
+        </section>
+        <section>
+            <h1>Projects</h1>
+            <h3>Contact me</h3>
+        </section>
+        Design portfolio HTML CSS View project View code E-learning landing page HTML CSS View project View code Todo web app HTML CSS JavaScript View project View code Entertainment web app HTML CSS JavaScript View project View code Memory Game HTML CSS JavaScript
+        View project View code Art gallery showcase HTML CSS JavaScript View project View code
+
+    </main>
+
+    <!-- === Footer section === -->
+
+    <footer>
+        Contact
+        <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+
+        Name Email Message Send message andrewMartinenko
+    </footer>
 </body>
 
 </html>

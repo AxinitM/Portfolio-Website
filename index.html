@@ -1,7 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- TODO LIST
+    for next work session
 
 General:
 - add circles and patterns (?)
+- code-review
 
 Projects:
 - change project image opacity on hover
@@ -11,10 +16,6 @@ Contacts:
 - complete fully
 - extend background color (dark gray) to full width -->
 
-
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <!-- === Character encoding & viewport === -->
@@ -70,11 +71,12 @@ Contacts:
          :root {
             /* == Colors == */
             --clr-bg: #151515;
-            --clr-black: #151515;
             --clr-accent: #4EE1A0;
             --clr-darkgrey: #242424;
             --clr-gray: #d9d9d9;
+            --clr-black: #000000;
             --clr-white: #FFFFFF;
+            --clr-error: #FF6F5B;
             /* == Fonts == */
             --font-main: "Space Grotesk", Arial, sans-serif;
         }
@@ -84,6 +86,10 @@ Contacts:
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -222,6 +228,7 @@ Contacts:
         .projects-header {
             display: flex;
             justify-content: space-between;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 3rem;
         }
@@ -246,27 +253,136 @@ Contacts:
         /*  == CONTACT FORM SECTION SETS ==*/
         
         .contact-form-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
             background-color: var(--clr-darkgrey);
+            padding: 2rem;
+            gap: 0;
+        }
+        /* фиксируем ширину колонок — каждый занимает примерно половину секции */
+        
+        .contact-form-section .contact-info,
+        .contact-form-section .contact-form {
+            width: 48%;
+            box-sizing: border-box;
+        }
+        /* дополнительные стили для содержимого, чтобы было аккуратно */
+        
+        .contact-info h1 {
+            margin-bottom: 1rem;
         }
         
+        .contact-info p {
+            color: var(--clr-gray);
+            line-height: 1.6;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-top: 1.5rem;
+            visibility: hidden;
+        }
+        
+        .contact-form-section input,
+        .contact-form-section textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid var(--clr-gray);
+            background: transparent;
+            padding: 0.5rem 0;
+            color: var(--clr-white);
+            font-family: var(--font-main);
+            font-size: 1rem;
+        }
+        
+        .contact-form-section input:focus,
+        .contact-form-section textarea:focus {
+            outline: none;
+            border-bottom-color: var(--clr-accent);
+        }
+        
+        .contact-form-section textarea {
+            resize: none;
+        }
+        
+        input::placeholder,
+        textarea::placeholder {
+            font-family: var(--font-main);
+            color: var(--clr-gray);
+            text-transform: uppercase;
+        }
+        /* == Contact-form error messages sets == */
+        
+        .error-message {
+            visibility: hidden;
+            display: block;
+            margin-top: 0.25rem;
+            color: var(--clr-error);
+            font-weight: 400;
+            font-size: 0.75rem;
+            line-height: 1rem;
+            letter-spacing: 0.5px;
+        }
+        /* == Contact-me link and Button Send Message sets */
+        
         .contact-me {
+            display: inline-block;
             color: var(--clr-white);
             font-size: 1rem;
             font-weight: bold;
             letter-spacing: 0.14rem;
             text-transform: uppercase;
             line-height: 1.625rem;
-            margin: 5rem 0;
+            margin: 2rem 0 0;
             text-decoration-line: underline;
             text-decoration-color: var(--clr-accent);
             text-decoration-thickness: 0.15rem;
             text-underline-offset: 0.8rem;
+            cursor: pointer;
         }
         
         .contact-me:hover {
             color: var(--clr-accent);
-            cursor: pointer;
         }
+        
+        .button-reset {
+            border: none;
+            background: transparent;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            margin-bottom: 2.5rem;
+        }
+        /* Адаптив: на узких экранах ставим колонки в столбец */
+        
+        @media (max-width: 800px) {
+            .contact-form-section {
+                flex-direction: column;
+                padding: 1.25rem;
+            }
+            .contact-form-section .contact-info,
+            .contact-form-section .contact-form {
+                width: 100%;
+            }
+            .contact-form {
+                margin-top: 1.25rem;
+            }
+        }
+        /* .contact-form-section {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--clr-darkgrey);
+        }
+        
+        .contact-form-section article {
+            flex: 1;
+        }
+        
+       
+        
+       */
         /* === FOOTER SECTION SETS === */
         /* Footer section sets — see the "HEADER AND FOOTER SECTIONS SETS" section above */
         /* === @MEDIA SETS ===  */
@@ -322,7 +438,7 @@ Contacts:
                 <p>Based in the Moldova, I'm a front-end developer passionate about building accessible web apps that users love. </p>
             </article>
 
-            <p class="contact-me">Contact me</p>
+            <a class="contact-me" href="#contact-form-section">Contact me</a>
 
             <hr class="hr-line">
         </section>
@@ -360,7 +476,7 @@ Contacts:
             <!-- === Projects header section -->
             <article class="projects-header">
                 <h1>Projects</h1>
-                <p class="contact-me">Contact me</p>
+                <a class="contact-me" href="#contact-form-section">Contact me</a>
             </article>
             <!-- Projects blocks section -->
             <section class="projects-block">
@@ -409,15 +525,57 @@ Contacts:
 
 
         <!-- === Contact form section === -->
-        <section class="contact-form-section">
-            <h1>Contact</h1>
-            <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
-            Name Email Message
-            <p class="contact-me">Send message</p>
+
+        <section class="contact-form-section" id="contact-form-section">
+            <article class="contact-info">
+                <h2>Contact</h2>
+                <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+            </article>
+
+            <article class="contact-form">
+                <form action="https://example.com/submit-form" method="POST" aria-label="Contact form">
+
+                    <!-- NAME -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Name" required aria-required="true" aria-invalid="false" aria-describedby="name-error">
+
+                        <span id="name-error" class="error-message" role="alert">
+                              Please enter your name (2 or more characters)
+                        </span>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" aria-invalid="false" aria-describedby="email-error">
+
+                        <span id="email-error" class="error-message" role="alert">
+                              Please enter a valid email address
+                        </span>
+                    </div>
+
+                    <!-- MESSAGE -->
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Message" required aria-required="true" aria-invalid="false" aria-describedby="message-error"></textarea>
+
+                        <span id="message-error" class="error-message" role="alert">
+                              Please enter your message (10 or more characters)
+                        </span>
+                    </div>
+
+                    <button type="submit" class="contact-me button-reset" aria-label="Send your message">
+                        Send message
+                    </button>
+
+                </form>
+            </article>
         </section>
+
+
         <hr class="hr-line">
     </main>
-
 
 
     <!-- === Footer section === -->
@@ -449,6 +607,8 @@ Contacts:
 
         </section>
     </footer>
+    <script>
+    </script>
 </body>
 
 </html>

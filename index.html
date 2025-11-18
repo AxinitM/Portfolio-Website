@@ -132,21 +132,39 @@
         }
         
         .header-links,
-        .footer-section {
+        .footer-links {
             display: flex;
             align-items: center;
             gap: 2.5rem;
         }
         
         .header-links a,
-        .footer-section a {
+        .footer-links a {
             text-decoration: none;
         }
         
         .header-links img,
-        .footer-section img {
+        .footer-links img {
             width: 1.5rem;
             height: 1.5rem;
+        }
+        
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: var(--clr-white);
+            transition: fill 0.3s ease;
+        }
+        
+        .icon-link:hover .icon {
+            fill: var(--clr-accent);
         }
         /* === Main section sets === */
         
@@ -180,27 +198,32 @@
             margin-bottom: 0.875rem;
         }
         /* === PROJECTS SECTION SETS  === */
+        
+        .projects-section {
+            margin: 3rem 0 5rem;
+        }
         /* == Projects header */
         
         .projects-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 3rem;
         }
         /* == Projects section sets == */
         
-        .projects-section {
+        .projects-block {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem 6rem;
         }
         
-        .projects-section h3 {
-            margin-top: 0.5rem;
+        .projects-block h3 {
+            margin: 1rem 0 0.25rem;
             text-transform: uppercase;
         }
         
-        .projects-section img {
+        .projects-block img {
             width: 100%;
             height: auto;
             display: block;
@@ -247,17 +270,32 @@
     <header class="header-section">
         <h3>andrewMartinenko</h3>
 
-        <div class="header-links">
-            <a href="https://github.com/AxinitM" target="_blank">
-                <img src="./assets/images/icon-github.svg" alt="github icon">
+        <section class="header-links">
+            <a href="https://www.frontender.biz/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My website — opens in a new tab">
+                <svg class="icon" viewBox="0 0 100 100" role="img" aria-hidden="false">
+                    <path
+                        d="M50,5C25.147,5,5,25.147,5,50C5,74.853,25.147,95,50,95S95,74.853,95,50C95,25.147,74.853,5,50,5ZM12.593,52.5L27.54,52.5C27.697,57.848,28.357,62.899,29.431,67.5L16.848,67.5C14.446,62.968,12.949,57.888,12.593,52.5ZM52.5,27.5L52.5,12.906C57.081,14.382,61.147,19.827,63.887,27.5L52.5,27.5ZM65.402,32.5C66.557,37.055,67.281,42.144,67.455,47.5L52.5,47.5L52.5,32.5L65.402,32.5ZM47.5,12.906L47.5,27.5L36.113,27.5C38.853,19.827,42.919,14.382,47.5,12.906ZM47.5,32.5L47.5,47.5L32.545,47.5C32.719,42.144,33.443,37.055,34.598,32.5L47.5,32.5ZM27.54,47.5L12.593,47.5C12.95,42.112,14.446,37.032,16.848,32.5L29.431,32.5C28.357,37.101,27.697,42.152,27.54,47.5ZM32.545,52.5L47.5,52.5L47.5,67.5L34.598,67.5C33.443,62.945,32.719,57.856,32.545,52.5ZM47.5,72.5L47.5,87.094C42.919,85.618,38.853,80.173,36.113,72.5L47.5,72.5ZM52.5,87.094L52.5,72.5L63.887,72.5C61.147,80.173,57.081,85.618,52.5,87.094ZM52.5,67.5L52.5,52.5L67.455,52.5C67.281,57.856,66.557,62.945,65.402,67.5L52.5,67.5ZM72.46,52.5L87.407,52.5C87.05,57.888,85.554,62.968,83.152,67.5L70.569,67.5C71.643,62.899,72.303,57.848,72.46,52.5ZM72.46,47.5C72.303,42.152,71.643,37.101,70.569,32.5L83.152,32.5C85.554,37.032,87.051,42.112,87.407,47.5L72.46,47.5ZM79.979,27.5L69.185,27.5C67.531,22.405,65.324,18.05,62.706,14.72C69.637,17.224,75.625,21.713,79.979,27.5ZM37.294,14.72C34.676,18.05,32.469,22.405,30.815,27.5L20.021,27.5C24.375,21.713,30.363,17.224,37.294,14.72ZM20.021,72.5L30.815,72.5C32.469,77.595,34.676,81.95,37.294,85.28C30.363,82.776,24.375,78.287,20.021,72.5ZM62.706,85.28C65.324,81.95,67.531,77.595,69.185,72.5L79.979,72.5C75.625,78.287,69.637,82.776,62.706,85.28Z" />
+                </svg>
             </a>
-            <a href="https://www.frontender.biz/" target="_blank">
-                <img src="./assets/images/favicon.png" alt="my favicon icon">
+
+            <a href="https://github.com/AxinitM" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My GitHub — opens in a new tab">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.1s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .1 3.1 4.6 4.6 0 0 1 1.2 3.2c0 4.8-2.8 5.7-5.5 6a3.3 3.3 0 0 1 .9 2.7v4c0 .3.2.7.8.6A11.6 11.6 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
             </a>
-            <a href="https://www.linkedin.com/in/andrei-martinenko/" target="_blank">
-                <img src="./assets/images/icon-linkedin.svg" alt="linkedin icon">
+
+
+
+            <a href="https://www.linkedin.com/in/andrei-martinenko/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab">
+                <svg class="icon" viewBox="0 0 448 512" role="img" aria-hidden="false" focusable="false">
+                    <path
+                        d="M100.28 448H7.4V148.9h92.88zM53.84 108.1a53.7 53.7 0 1 1 53.7-53.7 53.7 53.7 0 0 1-53.7 53.7zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.7-55.7 76.7V448h-92.6V148.9h88.9v40.8h1.3c12.4-23.4 42.6-48.3 87.7-48.3 93.9 0 111.3 61.8 111.3 142.3V448z" />
+                </svg>
             </a>
-        </div>
+
+
+        </section>
     </header>
 
     <!-- === Main section === -->
@@ -303,48 +341,48 @@
         </section>
 
         <!-- == Projects section  -->
-        <section>
+        <section class="projects-section">
             <!-- === Projects header section -->
             <article class="projects-header">
                 <h1>Projects</h1>
                 <p class="contact-me">Contact me</p>
             </article>
             <!-- Projects blocks section -->
-            <section class="projects-section">
+            <section class="projects-block">
 
-                <article class="projects-block">
+                <article>
                     <img src="./assets/images/thumbnail-project-1-large.webp" alt="Design portfolio page's image">
                     <h3>Design portfolio</h3>
                     <p>HTML CSS</p>
                     <!-- View project View code -->
                 </article>
 
-                <article class="projects-block">
+                <article>
                     <img src="./assets/images/thumbnail-project-2-large.webp" alt="E-learning landing page's image">
                     <h3>E-learning landing page</h3>
                     <p>HTML CSS</p>
                     <!-- View project View code -->
                 </article>
-                <article class="projects-block">
+                <article>
                     <img src="./assets/images/thumbnail-project-3-large.webp" alt="Todo web app's image">
                     <h3>Todo web app</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
                 </article>
-                <article class="projects-block">
+                <article>
                     <img src="./assets/images/thumbnail-project-4-large.webp" alt="Entertainment web app's image">
                     <h3>Entertainment web app</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
                 </article>
-                <article class="projects-block">
+                <article>
                     <img src="./assets/images/thumbnail-project-5-large.webp" alt="Memory Game page's image">
                     <h3>Memory Game</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
                 </article>
 
-                <article class="projects-block">
+                <article>
                     <img src="./assets/images/thumbnail-project-6-large.webp" alt="Art gallery showcase page's image">
                     <h3>Art gallery showcase</h3>
                     <p>HTML CSS JavaScript</p>
@@ -370,17 +408,31 @@
     <!-- === Footer section === -->
     <footer class="footer-section">
         <h3>andrewMartinenko</h3>
-        <div class="header-links">
-            <a href="https://github.com/AxinitM" target="_blank">
-                <img src="./assets/images/icon-github.svg" alt="github icon">
+
+        <section class="footer-links">
+
+            <a href="https://www.frontender.biz/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My website — opens in a new tab">
+                <svg class="icon" viewBox="0 0 100 100" role="img" aria-hidden="false">
+                    <path
+                        d="M50,5C25.147,5,5,25.147,5,50C5,74.853,25.147,95,50,95S95,74.853,95,50C95,25.147,74.853,5,50,5ZM12.593,52.5L27.54,52.5C27.697,57.848,28.357,62.899,29.431,67.5L16.848,67.5C14.446,62.968,12.949,57.888,12.593,52.5ZM52.5,27.5L52.5,12.906C57.081,14.382,61.147,19.827,63.887,27.5L52.5,27.5ZM65.402,32.5C66.557,37.055,67.281,42.144,67.455,47.5L52.5,47.5L52.5,32.5L65.402,32.5ZM47.5,12.906L47.5,27.5L36.113,27.5C38.853,19.827,42.919,14.382,47.5,12.906ZM47.5,32.5L47.5,47.5L32.545,47.5C32.719,42.144,33.443,37.055,34.598,32.5L47.5,32.5ZM27.54,47.5L12.593,47.5C12.95,42.112,14.446,37.032,16.848,32.5L29.431,32.5C28.357,37.101,27.697,42.152,27.54,47.5ZM32.545,52.5L47.5,52.5L47.5,67.5L34.598,67.5C33.443,62.945,32.719,57.856,32.545,52.5ZM47.5,72.5L47.5,87.094C42.919,85.618,38.853,80.173,36.113,72.5L47.5,72.5ZM52.5,87.094L52.5,72.5L63.887,72.5C61.147,80.173,57.081,85.618,52.5,87.094ZM52.5,67.5L52.5,52.5L67.455,52.5C67.281,57.856,66.557,62.945,65.402,67.5L52.5,67.5ZM72.46,52.5L87.407,52.5C87.05,57.888,85.554,62.968,83.152,67.5L70.569,67.5C71.643,62.899,72.303,57.848,72.46,52.5ZM72.46,47.5C72.303,42.152,71.643,37.101,70.569,32.5L83.152,32.5C85.554,37.032,87.051,42.112,87.407,47.5L72.46,47.5ZM79.979,27.5L69.185,27.5C67.531,22.405,65.324,18.05,62.706,14.72C69.637,17.224,75.625,21.713,79.979,27.5ZM37.294,14.72C34.676,18.05,32.469,22.405,30.815,27.5L20.021,27.5C24.375,21.713,30.363,17.224,37.294,14.72ZM20.021,72.5L30.815,72.5C32.469,77.595,34.676,81.95,37.294,85.28C30.363,82.776,24.375,78.287,20.021,72.5ZM62.706,85.28C65.324,81.95,67.531,77.595,69.185,72.5L79.979,72.5C75.625,78.287,69.637,82.776,62.706,85.28Z" />
+                </svg>
             </a>
-            <a href="https://www.frontender.biz/" target="_blank">
-                <img src="./assets/images/favicon.png" alt="my favicon icon">
+
+            <a href="https://github.com/AxinitM" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My GitHub — opens in a new tab">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.1s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .1 3.1 4.6 4.6 0 0 1 1.2 3.2c0 4.8-2.8 5.7-5.5 6a3.3 3.3 0 0 1 .9 2.7v4c0 .3.2.7.8.6A11.6 11.6 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
             </a>
-            <a href="https://www.linkedin.com/in/andrei-martinenko/" target="_blank">
-                <img src="./assets/images/icon-linkedin.svg" alt="linkedin icon">
+
+            <a href="https://www.linkedin.com/in/andrei-martinenko/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab">
+                <svg class="icon" viewBox="0 0 448 512" role="img" aria-hidden="false" focusable="false">
+                    <path
+                        d="M100.28 448H7.4V148.9h92.88zM53.84 108.1a53.7 53.7 0 1 1 53.7-53.7 53.7 53.7 0 0 1-53.7 53.7zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.7-55.7 76.7V448h-92.6V148.9h88.9v40.8h1.3c12.4-23.4 42.6-48.3 87.7-48.3 93.9 0 111.3 61.8 111.3 142.3V448z" />
+                </svg>
             </a>
-        </div>
+
+        </section>
     </footer>
 </body>
 

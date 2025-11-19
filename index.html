@@ -211,7 +211,6 @@ Contacts:
         .experience-section {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            /* grid-template-rows: 1fr 1fr 1fr; */
             row-gap: 3rem;
         }
         
@@ -243,6 +242,15 @@ Contacts:
         .projects-block h3 {
             margin: 1rem 0 0.25rem;
             text-transform: uppercase;
+            text-decoration-line: underline;
+            text-decoration-color: var(--clr-accent);
+            text-decoration-thickness: 0.10rem;
+            text-underline-offset: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .projects-block h3:hover {
+            color: var(--clr-accent);
         }
         
         .projects-block img {
@@ -261,17 +269,14 @@ Contacts:
             padding: 2rem;
             gap: 0;
         }
-        /* фиксируем ширину колонок — каждый занимает примерно половину секции */
         
         .contact-form-section .contact-info,
         .contact-form-section .contact-form {
             width: 48%;
-            box-sizing: border-box;
         }
-        /* дополнительные стили для содержимого, чтобы было аккуратно */
         
         .contact-info h1 {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
         
         .contact-info p {
@@ -325,7 +330,7 @@ Contacts:
             line-height: 1rem;
             letter-spacing: 0.5px;
         }
-        /* == Contact-me link and Button Send Message sets */
+        /* == Contact-me link and Send Message Button sets == */
         
         .contact-me {
             display: inline-block;
@@ -355,7 +360,6 @@ Contacts:
             cursor: pointer;
             margin-bottom: 2.5rem;
         }
-        /* Адаптив: на узких экранах ставим колонки в столбец */
         
         @media (max-width: 800px) {
             .contact-form-section {
@@ -370,19 +374,6 @@ Contacts:
                 margin-top: 1.25rem;
             }
         }
-        /* .contact-form-section {
-            display: flex;
-            justify-content: space-between;
-            background-color: var(--clr-darkgrey);
-        }
-        
-        .contact-form-section article {
-            flex: 1;
-        }
-        
-       
-        
-       */
         /* === FOOTER SECTION SETS === */
         /* Footer section sets — see the "HEADER AND FOOTER SECTIONS SETS" section above */
         /* === @MEDIA SETS ===  */
@@ -528,14 +519,14 @@ Contacts:
 
         <section class="contact-form-section" id="contact-form-section">
             <article class="contact-info">
-                <h2>Contact</h2>
+                <h1>Contact</h1>
                 <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
             </article>
 
             <article class="contact-form">
                 <form action="https://example.com/submit-form" method="POST" aria-label="Contact form">
 
-                    <!-- NAME -->
+                    <!-- == Name section == -->
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Name" required aria-required="true" aria-invalid="false" aria-describedby="name-error">
@@ -545,7 +536,7 @@ Contacts:
                         </span>
                     </div>
 
-                    <!-- EMAIL -->
+                    <!-- == Email section  -->
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email" required aria-required="true" aria-invalid="false" aria-describedby="email-error">
@@ -555,7 +546,7 @@ Contacts:
                         </span>
                     </div>
 
-                    <!-- MESSAGE -->
+                    <!-- == Message section == -->
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="4" placeholder="Message" required aria-required="true" aria-invalid="false" aria-describedby="message-error"></textarea>

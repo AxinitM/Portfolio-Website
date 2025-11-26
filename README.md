@@ -1,22 +1,20 @@
 # Single-page developer portfolio / Codecademy Project
 
 This is a solution to the **"Single-page developer portfolio"** project from Codecademy.
+
 The project focuses on building a modern, responsive single‑page portfolio for a frontend developer.
 
 ---
 
 ## Table of contents
-
-- [Single-page developer portfolio solution / Codecademy Project](#single-page-developer-portfolio-solution--codecademy-project)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Project Goals](#project-goals)
-  - [Features](#features)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-  - [Built With](#built-with)
-  - [Author](#author)
-  - [License](#license)
+- [Overview](#overview)
+- [Project Goals](#project-goals)
+- [Features](#features)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built With](#built-with)
+- [Author](#author)
+- [License](#license)
 
 ---
 

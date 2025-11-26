@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- TODO LIST
-    for next work session
-
-General:
-- add circles and patterns (?)
-- code-review
-
-Projects:
-- make modal window with link to my main website
-- show links to code and project page on hover
-
-Contacts:
-- extend background color (dark gray) to full width -->
-
-
 <head>
     <!-- === Character encoding & viewport === -->
     <meta charset="UTF-8" />
@@ -23,17 +8,17 @@ Contacts:
     <meta name="theme-color" content="#faf9fd" />
 
     <!-- === Page info === -->
-    <title>Single-page developer portfolio</title>
-    <meta name="description" content="..." />
-    <meta name="keywords" content="..." />
-    <meta name="author" content="..." />
+    <title>Frontend Developer Portfolio | HTML, CSS, JavaScript</title>
+    <meta name="description" content="Single-page portfolio of a frontend developer showcasing projects, skills in HTML, CSS, and JavaScript, and ways to get in touch." />
+    <meta name="keywords" content="frontend developer, web developer, portfolio, HTML, CSS, JavaScript, responsive design, UI development" />
+    <meta name="author" content="Frontend Developer" />
     <meta name="robots" content="index, follow" />
 
     <!-- === Canonical URL === -->
-    <!-- <link rel="canonical" href="https://www.yoursite.com/" /> -->
+    <link rel="canonical" href="https://www.yoursite.com/" />
 
     <!-- === Favicon === -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" />
 
     <!-- === Google Fonts === -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,495 +26,38 @@ Contacts:
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <!-- === CSS Reset / Styles === -->
-
-    <!-- <link rel="stylesheet" href="./styles/style.css" /> -->
+    <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- === Open Graph (Facebook, LinkedIn, etc.) === -->
-    <meta property="og:title" content="Single-page developer portfolio" />
-
-    <!-- !!!!!!!!!!!!!!!!!!!! NEED TO FILL IN !!!!!!!!!!!!!!!
-    <meta property="og:description" content="..." /> -->
-
+    <meta property="og:title" content="Frontend Developer Portfolio" />
+    <meta property="og:description" content="Explore my frontend projects, technical skills, and experience in building modern, responsive web interfaces." />
     <meta property="og:image" content="https://www.yoursite.com/assets/og-image.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.yoursite.com/" />
 
     <!-- === Twitter Card === -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="..." />
-    <meta name="twitter:description" content="...." />
+    <meta name="twitter:title" content="Frontend Developer Portfolio" />
+    <meta name="twitter:description" content="A single-page portfolio featuring my frontend development projects and skills." />
     <meta name="twitter:image" content="https://www.yoursite.com/assets/og-image.jpg" />
     <meta name="twitter:site" content="@YourTwitterHandle" />
 
     <!-- === Optional accessibility / SEO improvements === -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <style>
-        /* === Roots sets === */
-        
-         :root {
-            /* == Colors == */
-            --clr-bg: #151515;
-            --clr-accent: #4EE1A0;
-            --clr-darkgrey: #242424;
-            --clr-gray: #d9d9d9;
-            --clr-black: #000000;
-            --clr-white: #FFFFFF;
-            --clr-error: #FF6F5B;
-            --clr-toast-message: #006400;
-            /* == Fonts == */
-            --font-main: "Space Grotesk", Arial, sans-serif;
-        }
-        /* === General sets === */
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            min-height: 100vh;
-            width: 80%;
-            margin: 3rem auto;
-            font-size: 16px;
-            font-family: var(--font-main);
-            background-color: var(--clr-bg);
-            color: var(--clr-white);
-        }
-        /* === Headers and text sets === */
-        
-        h1 {
-            font-size: 5.5rem;
-            letter-spacing: -2.5px;
-            line-height: 5.5rem;
-            font-weight: 700;
-            text-align: left;
-            margin: 2rem 0;
-        }
-        
-        h2 {
-            font-size: 3rem;
-            letter-spacing: -1.5px;
-            line-height: 3.5rem;
-            font-weight: 700;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            line-height: 2rem;
-            font-weight: 700;
-        }
-        
-        p {
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-            font-weight: 400;
-            color: var(--clr-gray);
-        }
-        
-        .accent-text {
-            text-decoration-line: underline;
-            text-decoration-color: var(--clr-accent);
-            text-decoration-thickness: 0.25rem;
-            text-underline-offset: 0.6rem;
-        }
-        /* === HEADER AND FOOTER SECTIONS SETS === */
-        
-        .header-section,
-        .footer-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 3rem 0 8rem;
-        }
-        
-        .footer-section {
-            margin-bottom: 4rem;
-        }
-        
-        .header-links,
-        .footer-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-        
-        .header-links a,
-        .footer-links a {
-            text-decoration: none;
-        }
-        
-        .header-links img,
-        .footer-links img {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-        
-        .icon-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-        
-        .icon {
-            width: 1.5rem;
-            height: 1.5rem;
-            fill: var(--clr-white);
-            transition: fill 0.3s ease;
-        }
-        /* Hover for mouse users only */
-        
-        @media (hover: hover) {
-            .icon-link:hover .icon {
-                fill: var(--clr-accent);
-            }
-        }
-        /* Active state for touch/click feedback */
-        
-        .icon-link:active .icon {
-            fill: var(--clr-accent);
-            opacity: 0.7;
-        }
-        /* === Main section sets === */
-        
-        .main-header-section {
-            margin: 5rem 0;
-        }
-        
-        .main-header-section-text {
-            max-width: 50%;
-            margin-top: 0;
-        }
-        /* == hr line sets == */
-        
-        .hr-line {
-            width: 100%;
-            border: none;
-            height: 1px;
-            background-color: var(--clr-white);
-            margin: 3rem 0;
-        }
-        /* == Experience section sets == */
-        
-        .experience-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            row-gap: 3rem;
-        }
-        
-        .experience-block h2 {
-            margin-bottom: 0.875rem;
-        }
-        /* === PROJECTS SECTION SETS  === */
-        
-        .projects-section {
-            margin: 3rem 0 5rem;
-        }
-        /* == Projects header */
-        
-        .projects-header {
-            display: flex;
-            justify-content: space-between;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-        /* == Projects section sets == */
-        
-        .projects-block {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem 6rem;
-        }
-        
-        .projects-block h3 {
-            margin: 1rem 0 0.25rem;
-            text-transform: uppercase;
-            text-decoration-line: underline;
-            text-decoration-color: var(--clr-accent);
-            text-decoration-thickness: 0.10rem;
-            text-underline-offset: 0.5rem;
-            cursor: pointer;
-        }
-        /* Hover for mouse users only */
-        
-        @media (hover: hover) {
-            .projects-block h3:hover {
-                color: var(--clr-accent);
-            }
-        }
-        
-        .projects-block img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        /*  == CONTACT FORM SECTION SETS ==*/
-        
-        .contact-form-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 100%;
-            background-color: var(--clr-darkgrey);
-            padding: 2rem;
-            gap: 0;
-        }
-        
-        .contact-form-section .contact-info,
-        .contact-form-section .contact-form {
-            width: 48%;
-        }
-        
-        .contact-info h1 {
-            margin-bottom: 2rem;
-        }
-        
-        .contact-info p {
-            color: var(--clr-gray);
-            line-height: 1.6;
-        }
-        
-        .contact-form label {
-            display: block;
-            margin-top: 1.5rem;
-            visibility: hidden;
-        }
-        
-        .contact-form-section input,
-        .contact-form-section textarea {
-            width: 100%;
-            border: none;
-            border-bottom: 1px solid var(--clr-gray);
-            background: transparent;
-            padding: 0.5rem 0;
-            color: var(--clr-white);
-            font-family: var(--font-main);
-            font-size: 1rem;
-        }
-        
-        .contact-form-section input:focus,
-        .contact-form-section textarea:focus {
-            outline: none;
-            border-bottom-color: var(--clr-accent);
-        }
-        
-        .contact-form-section textarea {
-            resize: none;
-        }
-        
-        input::placeholder,
-        textarea::placeholder {
-            font-family: var(--font-main);
-            color: var(--clr-gray);
-            text-transform: uppercase;
-        }
-        /* == Contact-form error messages sets == */
-        
-        .error-message {
-            visibility: hidden;
-            display: block;
-            margin-top: 0.25rem;
-            color: var(--clr-error);
-            font-weight: 400;
-            font-size: 0.75rem;
-            line-height: 1rem;
-            letter-spacing: 0.5px;
-        }
-        /* == Contact-me link and Send Message Button sets == */
-        
-        .contact-me {
-            display: inline-block;
-            color: var(--clr-white);
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 0.14rem;
-            text-transform: uppercase;
-            line-height: 1.625rem;
-            margin: 2rem 0 0;
-            text-decoration-line: underline;
-            text-decoration-color: var(--clr-accent);
-            text-decoration-thickness: 0.15rem;
-            text-underline-offset: 0.8rem;
-            cursor: pointer;
-        }
-        /* Hover for mouse users only */
-        
-        @media (hover: hover) {
-            .contact-me:hover {
-                color: var(--clr-accent);
-            }
-        }
-        /* Active state for touch/click feedback */
-        
-        .contact-me:active {
-            color: var(--clr-accent);
-        }
-        
-        .button-reset {
-            border: none;
-            background: transparent;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
-            margin-bottom: 2.5rem;
-        }
-        /* === FOOTER SECTION SETS === */
-        /* Footer section sets — see the "HEADER AND FOOTER SECTIONS SETS" section above */
-        /* === @MEDIA SETS ===  */
-        /* == max-width: 1024px == */
-        
-        @media (max-width: 1024px) {
-            body {
-                width: 90%;
-                margin: 2rem auto;
-            }
-            h1 {
-                font-size: 3rem;
-                line-height: 3.2rem;
-                letter-spacing: -1.5px;
-            }
-            h2 {
-                font-size: 2rem;
-                line-height: 2.4rem;
-            }
-            /* Main section */
-            .main-header-section-text {
-                max-width: 70%;
-            }
-            /* Experience */
-            .experience-section {
-                grid-template-columns: 1fr 1fr;
-                row-gap: 2rem;
-                column-gap: 2rem;
-            }
-            /* Projects */
-            .projects-block {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem 2.5rem;
-            }
-            /* Header + Footer */
-            .header-section,
-            .footer-section {
-                margin: 2rem 0 5rem;
-            }
-            /* Contact */
-            .contact-form-section {
-                padding: 1.5rem;
-                gap: 2rem;
-            }
-            .contact-form-section .contact-info,
-            .contact-form-section .contact-form {
-                width: 50%;
-            }
-        }
-        /* == max-width: 768px == */
-        
-        @media (max-width: 768px) {
-            body {
-                width: 80%;
-                margin: 1.5rem auto;
-            }
-            h1 {
-                font-size: 1.8rem;
-                line-height: 2.2rem;
-                letter-spacing: -1px;
-                text-align: center;
-            }
-            h2 {
-                font-size: 1.4rem;
-                line-height: 1.8rem;
-                text-align: center;
-            }
-            h3 {
-                font-size: 1rem;
-                text-align: center;
-            }
-            p {
-                font-size: 0.8rem;
-                line-height: 1.6rem;
-                text-align: center;
-            }
-            /* Header */
-            .header-section {
-                flex-direction: column;
-                gap: 1.5rem;
-                margin: 2rem 0 4rem;
-            }
-            /* Main section */
-            .main-header-section-text {
-                max-width: 100%;
-                text-align: center;
-            }
-            /* Contact-мe alignment to the right */
-            .contact-me {
-                display: block;
-                text-align: right;
-                margin-right: 0;
-                margin-left: auto;
-            }
-            .contact-info {
-                text-align: right;
-            }
-            /* Experience Section */
-            .experience-section {
-                grid-template-columns: 1fr 1fr;
-                text-align: center;
-                row-gap: 1rem;
-            }
-            /* Projects */
-            .projects-header {
-                margin-bottom: 0rem;
-            }
-            .projects-block {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .projects-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            .project-contact-me {
-                display: none;
-            }
-            /* Footer */
-            .footer-section {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            /* Contact */
-            .contact-form-section {
-                flex-direction: column;
-                padding: 1.25rem;
-            }
-            .contact-form-section .contact-info,
-            .contact-form-section .contact-form {
-                width: 100%;
-            }
-            .contact-form {
-                margin-top: 1.25rem;
-            }
-        }
-    </style>
+
 </head>
 
 <body>
+
+
     <!-- === Header and links section ===  -->
     <header class="header-section">
-        <h3>andrewMartinenko</h3>
+        <p class="logo-text">andrewMartinenko</p>
 
         <section class="header-links">
-            <a href="https://www.frontender.biz/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My website — opens in a new tab">
-                <svg class="icon" viewBox="0 0 100 100" role="img" aria-hidden="false">
+            <a href="https://www.frontender.biz/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My website opens in a new tab">
+                <svg class="icon" viewBox="0 0 100 100" role="img">
                     <path
                         d="M50,5C25.147,5,5,25.147,5,50C5,74.853,25.147,95,50,95S95,74.853,95,50C95,25.147,74.853,5,50,5ZM12.593,52.5L27.54,52.5C27.697,57.848,28.357,62.899,29.431,67.5L16.848,67.5C14.446,62.968,12.949,57.888,12.593,52.5ZM52.5,27.5L52.5,12.906C57.081,14.382,61.147,19.827,63.887,27.5L52.5,27.5ZM65.402,32.5C66.557,37.055,67.281,42.144,67.455,47.5L52.5,47.5L52.5,32.5L65.402,32.5ZM47.5,12.906L47.5,27.5L36.113,27.5C38.853,19.827,42.919,14.382,47.5,12.906ZM47.5,32.5L47.5,47.5L32.545,47.5C32.719,42.144,33.443,37.055,34.598,32.5L47.5,32.5ZM27.54,47.5L12.593,47.5C12.95,42.112,14.446,37.032,16.848,32.5L29.431,32.5C28.357,37.101,27.697,42.152,27.54,47.5ZM32.545,52.5L47.5,52.5L47.5,67.5L34.598,67.5C33.443,62.945,32.719,57.856,32.545,52.5ZM47.5,72.5L47.5,87.094C42.919,85.618,38.853,80.173,36.113,72.5L47.5,72.5ZM52.5,87.094L52.5,72.5L63.887,72.5C61.147,80.173,57.081,85.618,52.5,87.094ZM52.5,67.5L52.5,52.5L67.455,52.5C67.281,57.856,66.557,62.945,65.402,67.5L52.5,67.5ZM72.46,52.5L87.407,52.5C87.05,57.888,85.554,62.968,83.152,67.5L70.569,67.5C71.643,62.899,72.303,57.848,72.46,52.5ZM72.46,47.5C72.303,42.152,71.643,37.101,70.569,32.5L83.152,32.5C85.554,37.032,87.051,42.112,87.407,47.5L72.46,47.5ZM79.979,27.5L69.185,27.5C67.531,22.405,65.324,18.05,62.706,14.72C69.637,17.224,75.625,21.713,79.979,27.5ZM37.294,14.72C34.676,18.05,32.469,22.405,30.815,27.5L20.021,27.5C24.375,21.713,30.363,17.224,37.294,14.72ZM20.021,72.5L30.815,72.5C32.469,77.595,34.676,81.95,37.294,85.28C30.363,82.776,24.375,78.287,20.021,72.5ZM62.706,85.28C65.324,81.95,67.531,77.595,69.185,72.5L79.979,72.5C75.625,78.287,69.637,82.776,62.706,85.28Z" />
                 </svg>
@@ -608,39 +136,39 @@ Contacts:
             <section class="projects-block">
 
                 <article>
-                    <img src="./assets/images/thumbnail-project-1-large.webp" alt="Design portfolio page's image">
+                    <img src="./images/thumbnail-project-1-large.webp" alt="Design portfolio page's image">
                     <h3>Design portfolio</h3>
                     <p>HTML CSS</p>
                     <!-- View project View code -->
                 </article>
 
                 <article>
-                    <img src="./assets/images/thumbnail-project-2-large.webp" alt="E-learning landing page's image">
+                    <img src="./images/thumbnail-project-2-large.webp" alt="E-learning landing page's image">
                     <h3>E-learning landing page</h3>
                     <p>HTML CSS</p>
                     <!-- View project View code -->
                 </article>
                 <article>
-                    <img src="./assets/images/thumbnail-project-3-large.webp" alt="Todo web app's image">
+                    <img src="./images/thumbnail-project-3-large.webp" alt="Todo web app's image">
                     <h3>Todo web app</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
                 </article>
                 <article>
-                    <img src="./assets/images/thumbnail-project-4-large.webp" alt="Entertainment web app's image">
+                    <img src="./images/thumbnail-project-4-large.webp" alt="Entertainment web app's image">
                     <h3>Entertainment web app</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
                 </article>
                 <article>
-                    <img src="./assets/images/thumbnail-project-5-large.webp" alt="Memory Game page's image">
+                    <img src="./images/thumbnail-project-5-large.webp" alt="Memory Game page's image">
                     <h3>Memory Game</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
                 </article>
 
                 <article>
-                    <img src="./assets/images/thumbnail-project-6-large.webp" alt="Art gallery showcase page's image">
+                    <img src="./images/thumbnail-project-6-large.webp" alt="Art gallery showcase page's image">
                     <h3>Art gallery showcase</h3>
                     <p>HTML CSS JavaScript</p>
                     <!-- View project View code -->
@@ -706,11 +234,11 @@ Contacts:
 
     <!-- === Footer section === -->
     <footer class="footer-section">
-        <h3>andrewMartinenko</h3>
+        <p class="logo-text">andrewMartinenko</p>
 
         <section class="footer-links">
 
-            <a href="https://www.frontender.biz/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My website — opens in a new tab">
+            <a href="https://www.frontender.biz/" target="_blank" class="icon-link" rel="noopener noreferrer" aria-label="My website opens in a new tab">
                 <svg class="icon" viewBox="0 0 100 100" role="img" aria-hidden="false">
                     <path
                         d="M50,5C25.147,5,5,25.147,5,50C5,74.853,25.147,95,50,95S95,74.853,95,50C95,25.147,74.853,5,50,5ZM12.593,52.5L27.54,52.5C27.697,57.848,28.357,62.899,29.431,67.5L16.848,67.5C14.446,62.968,12.949,57.888,12.593,52.5ZM52.5,27.5L52.5,12.906C57.081,14.382,61.147,19.827,63.887,27.5L52.5,27.5ZM65.402,32.5C66.557,37.055,67.281,42.144,67.455,47.5L52.5,47.5L52.5,32.5L65.402,32.5ZM47.5,12.906L47.5,27.5L36.113,27.5C38.853,19.827,42.919,14.382,47.5,12.906ZM47.5,32.5L47.5,47.5L32.545,47.5C32.719,42.144,33.443,37.055,34.598,32.5L47.5,32.5ZM27.54,47.5L12.593,47.5C12.95,42.112,14.446,37.032,16.848,32.5L29.431,32.5C28.357,37.101,27.697,42.152,27.54,47.5ZM32.545,52.5L47.5,52.5L47.5,67.5L34.598,67.5C33.443,62.945,32.719,57.856,32.545,52.5ZM47.5,72.5L47.5,87.094C42.919,85.618,38.853,80.173,36.113,72.5L47.5,72.5ZM52.5,87.094L52.5,72.5L63.887,72.5C61.147,80.173,57.081,85.618,52.5,87.094ZM52.5,67.5L52.5,52.5L67.455,52.5C67.281,57.856,66.557,62.945,65.402,67.5L52.5,67.5ZM72.46,52.5L87.407,52.5C87.05,57.888,85.554,62.968,83.152,67.5L70.569,67.5C71.643,62.899,72.303,57.848,72.46,52.5ZM72.46,47.5C72.303,42.152,71.643,37.101,70.569,32.5L83.152,32.5C85.554,37.032,87.051,42.112,87.407,47.5L72.46,47.5ZM79.979,27.5L69.185,27.5C67.531,22.405,65.324,18.05,62.706,14.72C69.637,17.224,75.625,21.713,79.979,27.5ZM37.294,14.72C34.676,18.05,32.469,22.405,30.815,27.5L20.021,27.5C24.375,21.713,30.363,17.224,37.294,14.72ZM20.021,72.5L30.815,72.5C32.469,77.595,34.676,81.95,37.294,85.28C30.363,82.776,24.375,78.287,20.021,72.5ZM62.706,85.28C65.324,81.95,67.531,77.595,69.185,72.5L79.979,72.5C75.625,78.287,69.637,82.776,62.706,85.28Z" />
@@ -734,162 +262,7 @@ Contacts:
         </section>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.querySelector("form");
-
-            // === Define form fields and validation rules ===
-            const fields = {
-                name: {
-                    input: document.getElementById("name"),
-                    error: document.getElementById("name-error"),
-                    maxLength: 20,
-                    validate(value) {
-                        const trimmed = value.trim();
-                        return trimmed.length >= 2 && trimmed.length <= this.maxLength &&
-                            /^[A-Za-zÀ-žА-Яа-яЁё'\-\s]+$/.test(trimmed);
-                    }
-                },
-                email: {
-                    input: document.getElementById("email"),
-                    error: document.getElementById("email-error"),
-                    validate(value) {
-                        const trimmed = value.trim();
-                        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
-                    }
-                },
-                message: {
-                    input: document.getElementById("message"),
-                    error: document.getElementById("message-error"),
-                    maxLength: 500,
-                    validate(value) {
-                        const trimmed = value.trim();
-                        return trimmed.length >= 10 && trimmed.length <= this.maxLength;
-                    }
-                }
-            };
-
-            // === Show error message ===
-            function showError(field) {
-                field.input.setAttribute("aria-invalid", "true");
-                field.error.style.visibility = "visible";
-            }
-
-            // === Hide error message ===
-            function hideError(field) {
-                field.input.setAttribute("aria-invalid", "false");
-                field.error.style.visibility = "hidden";
-            }
-
-            // === Validate single field ===
-            function validateField(field) {
-                const value = field.input.value;
-                if (!field.validate(value)) {
-                    showError(field);
-                    return false;
-                } else {
-                    hideError(field);
-                    return true;
-                }
-            }
-
-            // === Add input and blur listeners for dynamic validation ===
-            Object.values(fields).forEach(field => {
-                field.input.addEventListener("input", () => {
-                    if (field.maxLength && field.input.value.length > field.maxLength) {
-                        field.input.value = field.input.value.slice(0, field.maxLength);
-                    }
-                    if (field.validate(field.input.value)) hideError(field);
-                });
-
-                field.input.addEventListener("blur", () => validateField(field));
-            });
-
-            // === Handle form submission ===
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-
-                let formIsValid = true;
-                Object.values(fields).forEach(field => {
-                    const valid = validateField(field);
-                    if (!valid) formIsValid = false;
-                });
-
-                if (!formIsValid) return;
-
-                const formData = new FormData(form);
-                fetch(form.action, {
-                        method: form.method,
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            // === Create overlay and message's window ===
-                            const overlay = document.createElement("div");
-                            overlay.id = "toast-overlay";
-                            overlay.style.cssText = `
-                            position: fixed;
-                            top: 0; left: 0;
-                            width: 100%; height: 100%;
-                            background: rgba(0,0,0,0.3);
-                            backdrop-filter: blur(5px);
-                            z-index: 999;
-                            opacity: 0;
-                            transition: opacity 0.3s ease;
-                        `;
-                            document.body.appendChild(overlay);
-
-                            const toast = document.createElement("div");
-                            toast.id = "toast-message";
-                            toast.textContent = "Message sent successfully!";
-                            toast.style.cssText = `
-                            position: fixed;
-                            top: 50%; left: 50%;
-                            transform: translate(-50%, -50%);
-                            background: var(--clr-toast-message);
-                            color: var(--clr-white);
-                            padding: 40px 60px;
-                            border-radius: 10px;
-                            font-size: 1.2rem;
-                            z-index: 1000;
-                            text-align: center;
-                            opacity: 0;
-                            transition: opacity 0.3s ease;
-                        `;
-                            document.body.appendChild(toast);
-
-                            // === Fade in ===
-                            requestAnimationFrame(() => {
-                                overlay.style.opacity = "1";
-                                toast.style.opacity = "1";
-                            });
-
-                            // === Fade out after 3 seconds ===
-                            setTimeout(() => {
-                                overlay.style.opacity = "0";
-                                toast.style.opacity = "0";
-                                setTimeout(() => {
-                                    overlay.remove();
-                                    toast.remove();
-                                }, 300);
-                            }, 3000);
-
-
-                            // === Clear form ===
-                            form.reset();
-                        } else {
-                            alert("Oops! There was a problem submitting your form.");
-                        }
-                    })
-                    .catch(() => {
-                        alert("Oops! There was a problem submitting your form.");
-                    });
-            });
-        });
-    </script>
+    <script src="main.js" defer></script>
 
 </body>
 

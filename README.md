@@ -59,7 +59,7 @@ The main focus is on:
 
 ## Screenshot
 
-![](/images/screenshot.jpeg)
+![](./images/screenshot.png)
 
 ---
 

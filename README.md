@@ -1,4 +1,4 @@
-# Single-page developer portfolio solution / Codecademy Project
+# Single-page developer portfolio / Codecademy Project
 
 This is a solution to the **"Single-page developer portfolio"** project from Codecademy.
 The project focuses on building a modern, responsive single‑page portfolio for a frontend developer.
@@ -59,7 +59,7 @@ The main focus is on:
 
 ## Screenshot
 
-![](/assets/screenshot.jpeg)
+![](screenshot.jpeg)
 
 ---
 

@@ -49,6 +49,7 @@ The main focus is on:
 * **Skills section** with structured list of technologies.
 * **Projects showcase** with screenshots and live/code links.
 * **Contact section** with accessible form and contact links.
+* **JavaScript** module responsible for form validation and submission handling.
 * Fully **responsive design** for desktop, tablet and mobile.
 * **SEO-optimized head** with proper meta and Open Graph tags.
 * Accessibility improvements: semantic markup, alt text, ARIA labels.
@@ -64,7 +65,7 @@ The main focus is on:
 ## Links
 
 * **Project Description:** [Codecademy Portfolio Project](https://www.codecademy.com/journeys/front-end-engineer/paths/fecj-22-building-interactive-websites/tracks/fecj-22-html-portfolio-project-personal-portfolio-website/modules/wdcp-22-personal-portfolio-project-21965fcf-f975-4849-8103-ac20ba18e97d/kanban_projects/portfolio-website)
-* **Live Demo:** [https://your-live-site-url.com](https://your-live-site-url.com)
+* **Live Demo:** [Live Page URL](https://axinitm.github.io/Portfolio-Website/)
 * **Source Code:** [GitHub Repo](https://github.com/AxinitM/Portfolio-Website)
 
 ---
@@ -75,6 +76,7 @@ The main focus is on:
 * Modern **CSS3** (Flexbox, custom properties)
 * Responsive layout (mobile‑first approach)
 * Accessibility best practices (ARIA, landmarks)
+* JavaScript module responsible for form validation and submission handling
 * Performance optimizations (`lazy loading`, `async decoding`)
 * **Git & GitHub Pages** for deployment
 

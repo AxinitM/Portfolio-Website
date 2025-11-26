@@ -65,7 +65,7 @@ The main focus is on:
 
 ## Links
 
-* **Project Description:** Codecademy Portfolio Project(https://www.codecademy.com/journeys/front-end-engineer/paths/fecj-22-building-interactive-websites/tracks/fecj-22-html-portfolio-project-personal-portfolio-website/modules/wdcp-22-personal-portfolio-project-21965fcf-f975-4849-8103-ac20ba18e97d/kanban_projects/portfolio-website)
+* **Project Description:** [Codecademy Portfolio Project](https://www.codecademy.com/journeys/front-end-engineer/paths/fecj-22-building-interactive-websites/tracks/fecj-22-html-portfolio-project-personal-portfolio-website/modules/wdcp-22-personal-portfolio-project-21965fcf-f975-4849-8103-ac20ba18e97d/kanban_projects/portfolio-website)
 * **Live Demo:** [https://your-live-site-url.com](https://your-live-site-url.com)
 * **Source Code:** [GitHub Repo](https://github.com/AxinitM/Portfolio-Website)
 

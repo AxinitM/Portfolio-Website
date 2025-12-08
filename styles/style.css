@@ -598,3 +598,13 @@ a:focus {
         height: 1.2rem;
     }
 }
+
+/* === Autofill fix === */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--clr-darkgrey) inset !important;
+    box-shadow: 0 0 0 1000px var(--clr-darkgrey) inset !important;
+    -webkit-text-fill-color: var(--clr-white) !important;
+    caret-color: var(--clr-white) !important;
+    transition: background-color 9999s ease-out, color 9999s ease-out;
+}

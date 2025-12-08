@@ -197,7 +197,6 @@ p {
 .projects-header {
     display: flex;
     justify-content: space-between;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
 }
@@ -299,7 +298,7 @@ textarea::placeholder {
 }
 
 
-/* == Contact-form error messages sets == */
+/* = Contact-form error messages sets = */
 
 .error-message {
     visibility: hidden;
@@ -313,7 +312,7 @@ textarea::placeholder {
 }
 
 
-/* == Contact-me link and Send Message Button sets == */
+/* = Contact-me link and Send Message Button sets = */
 
 .contact-me {
     display: inline-block;
@@ -332,7 +331,7 @@ textarea::placeholder {
 }
 
 
-/* Hover for mouse users only */
+/* = Hover for mouse users only = */
 
 @media (hover: hover) {
     .contact-me:hover {
@@ -341,10 +340,14 @@ textarea::placeholder {
 }
 
 
-/* Active state for touch/click feedback */
+/* = Active / visited state for touch/click feedback = */
 
 .contact-me:active {
     color: var(--clr-accent);
+}
+
+.contact-me:visited {
+    color: var(--clr-white);
 }
 
 .button-reset {
@@ -354,6 +357,23 @@ textarea::placeholder {
     font: inherit;
     cursor: pointer;
     margin-bottom: 2.5rem;
+}
+
+
+/* = Active/Focus Reset for Links = */
+
+a:focus {
+    outline: none;
+    color: var(--clr-white);
+}
+
+.contact-me:focus {
+    outline: none;
+    color: var(--clr-white);
+}
+
+.icon-link:focus .icon {
+    fill: var(--clr-white);
 }
 
 
@@ -397,7 +417,7 @@ textarea::placeholder {
         grid-template-columns: 1fr 1fr;
         gap: 2rem 2.5rem;
     }
-    /* Header + Footer */
+    /* Header and Footer */
     .header-section,
     .footer-section {
         margin: 2rem 0 5rem;

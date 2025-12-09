@@ -58,7 +58,7 @@ The main focus is on:
 
 ## Screenshot
 
-![](./images/Screenshot.png)
+![](./images/screenshot-large.png)
 
 ---
 
